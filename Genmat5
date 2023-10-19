@@ -1,1 +1,38 @@
+#include <iostream>
 
+using namespace std;
+long long int n,m,x[25][25],i,copie,copienr,nr=0;
+
+
+int main()
+{
+
+   cin>>n;
+    copie=n;
+    int j=0,i=0;
+    while(n!=0)
+    {
+        n=n/10;
+        nr++;
+    }
+    copienr=nr;
+    while(copie>0 && j<=nr)
+    {
+        j++;
+        x[1][j]=copie%10;
+        copie/=10;
+    }
+
+    for(i=1;i<=nr;i++)
+    {
+        for(j=1;j<=nr;j++)
+        {
+            x[i][j]=x[1][j];
+            cout<<x[i][j]<<" ";
+        }
+        cout<<endl;
+    }
+
+
+    return 0;
+}
